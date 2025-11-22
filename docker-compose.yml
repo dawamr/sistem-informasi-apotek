@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  apotek-ci3:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: apotek-ci3-app
+    ports:
+      - "8081:80"
+    volumes:
+      - .:/var/www/html
+    environment:
+      - APACHE_RUN_USER=www-data
+      - APACHE_RUN_GROUP=www-data
+      - DB_HOST=host.docker.internal
+      - DB_USER=root
+      - DB_PASS=dawamraja
+      - DB_NAME=apotek_db
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    restart: unless-stopped

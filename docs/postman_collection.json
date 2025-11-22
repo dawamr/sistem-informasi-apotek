@@ -1,0 +1,263 @@
+{
+  "info": {
+    "_postman_id": "apotek-ci3-api",
+    "name": "Sistem Informasi Apotek CI3 - API Collection",
+    "description": "API endpoints untuk Sistem Informasi Apotek berbasis CodeIgniter 3",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Sales",
+      "item": [
+        {
+          "name": "Daily Sales Summary",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-API-KEY",
+                "value": "{{api_key}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/v1/sales/summary/daily?date={{date}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "sales", "summary", "daily"],
+              "query": [
+                {
+                  "key": "date",
+                  "value": "{{date}}"
+                }
+              ]
+            },
+            "description": "Get daily sales summary"
+          },
+          "response": []
+        },
+        {
+          "name": "Items Sold Per Day",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-API-KEY",
+                "value": "{{api_key}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/v1/sales/items-by-day?date={{date}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "sales", "items-by-day"],
+              "query": [
+                {
+                  "key": "date",
+                  "value": "{{date}}"
+                }
+              ]
+            },
+            "description": "Get items sold per day"
+          },
+          "response": []
+        },
+        {
+          "name": "Top Products",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-API-KEY",
+                "value": "{{api_key}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/v1/sales/top-products?period=daily&date={{date}}&limit=10",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "sales", "top-products"],
+              "query": [
+                {
+                  "key": "period",
+                  "value": "daily"
+                },
+                {
+                  "key": "date",
+                  "value": "{{date}}"
+                },
+                {
+                  "key": "limit",
+                  "value": "10"
+                }
+              ]
+            },
+            "description": "Get top selling products"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Attendance",
+      "item": [
+        {
+          "name": "Shift Today",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-API-KEY",
+                "value": "{{api_key}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/v1/attendance/shift-today?date={{date}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "attendance", "shift-today"],
+              "query": [
+                {
+                  "key": "date",
+                  "value": "{{date}}"
+                }
+              ]
+            },
+            "description": "Get staff on duty today"
+          },
+          "response": []
+        },
+        {
+          "name": "Attendance Summary",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-API-KEY",
+                "value": "{{api_key}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/v1/attendance/summary?date={{date}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "attendance", "summary"],
+              "query": [
+                {
+                  "key": "date",
+                  "value": "{{date}}"
+                }
+              ]
+            },
+            "description": "Get attendance summary"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Visits",
+      "item": [
+        {
+          "name": "Visits Summary",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-API-KEY",
+                "value": "{{api_key}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/v1/visits/summary?date={{date}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "visits", "summary"],
+              "query": [
+                {
+                  "key": "date",
+                  "value": "{{date}}"
+                }
+              ]
+            },
+            "description": "Get total visits"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Stock",
+      "item": [
+        {
+          "name": "Check Stock by Code",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-API-KEY",
+                "value": "{{api_key}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/v1/stock/check?code=OBT001",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "stock", "check"],
+              "query": [
+                {
+                  "key": "code",
+                  "value": "OBT001"
+                }
+              ]
+            },
+            "description": "Check medicine stock by code"
+          },
+          "response": []
+        },
+        {
+          "name": "Search Stock by Name",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-API-KEY",
+                "value": "{{api_key}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/v1/stock/check?q=paracetamol",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "stock", "check"],
+              "query": [
+                {
+                  "key": "q",
+                  "value": "paracetamol"
+                }
+              ]
+            },
+            "description": "Search medicine stock by name"
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:8081",
+      "type": "string"
+    },
+    {
+      "key": "api_key",
+      "value": "sk_n8n_apotek_2025_test_key_12345",
+      "type": "string"
+    },
+    {
+      "key": "date",
+      "value": "2025-02-21",
+      "type": "string"
+    }
+  ]
+}
