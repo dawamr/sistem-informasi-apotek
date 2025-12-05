@@ -107,6 +107,11 @@
                 <i class="bi bi-sliders"></i> Konfigurasi
             </a>
         </li>
+        <li>
+            <a href="<?= base_url('chatbot_setting') ?>" class="<?= ($current_page === 'chatbot_setting') ? 'active' : '' ?>">
+                <i class="bi bi-robot"></i> Chatbot Setting
+            </a>
+        </li>
         <?php endif; ?>
         
     </ul>

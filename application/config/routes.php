@@ -138,6 +138,18 @@ $route['api/v1/visits/summary'] = 'api/Visits/summary';
 // Stock API Routes
 $route['api/v1/stock/check'] = 'api/Stock/check';
 
+// Master Data API Routes - Medicines
+$route['api/v1/master/medicines'] = 'api/Master_medicine/index';
+$route['api/v1/master/medicines/(:num)'] = 'api/Master_medicine/detail/$1';
+
+// Master Data API Routes - Employees
+$route['api/v1/master/employees'] = 'api/Master_employee/index';
+$route['api/v1/master/employees/(:num)'] = 'api/Master_employee/detail/$1';
+
+// Master Data API Routes - Shifts
+$route['api/v1/master/shifts'] = 'api/Master_shift/index';
+$route['api/v1/master/shifts/(:num)'] = 'api/Master_shift/detail/$1';
+
 // Health Check Route (optional)
 $route['api/v1/health'] = 'api/Health/check';
 $route['reports/sales'] = 'reports/sales';
